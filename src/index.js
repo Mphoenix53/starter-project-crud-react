@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import DataProvider from "./providers/DataProvider";
 import Links from "./pages/Links";
+import LinkShow from "./pages/LinkShow";
+import LinkFrom from "./pages/LinkForm";
 
 
 
@@ -22,6 +24,8 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Links />} /> 
           <Route path='/about' element={<About />} />
+          <Route path='/links/:id' element={<LinkShow />} />
+          <Route path='/links/new' element={<LinkFrom />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -6,7 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
 import DataProvider from "./providers/DataProvider";
-import Home from "./pages/Home";
+import Links from "./pages/Links";
+
+
 
 
 const NotFound = ()=>{
@@ -18,8 +20,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/about" element={<About />} />
-          <Route path="/home" element={<Home />} />
+          <Route index element={<Links />} /> 
+          <Route path='/about' element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

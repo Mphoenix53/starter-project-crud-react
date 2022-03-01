@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 // createContext HERE this doing a lot for
@@ -5,12 +6,21 @@ import React, { useState } from "react";
 export const DataContext = React.createContext();
 
 const DataProvider = (props) => {
-  const [dataDemo, setDataDemo] = useState('dataDemo from provider');
+  const baseurl = 'https://link-app-sp22.herokuapp.com'
+  const [links, setlinks] = useState([]);
+
+  const getLinks = async()=>{
+    try{
+      let res = await axios.get(`${baseurl}/api/links`)  
+      setlinks(res.data) 
+     }catch(err){
+      alert('err occured')
+    }
+  }
 
   // create an object that will be 'global state'
   const dataProviderThing = {
-    dataDemo,
-    setDataDemo
+    
 };
   // return the provider which will wrap my all app
   return (

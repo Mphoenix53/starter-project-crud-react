@@ -26,6 +26,7 @@ ReactDOM.render(
           <Route path='/about' element={<About />} />
           <Route path='/links/:id' element={<LinkShow />} />
           <Route path='/links/new' element={<LinkFrom />} />
+          <Route path='/links/:id/edit' element={<LinkFrom />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -3,13 +3,15 @@ import { DataContext } from '../providers/DataProvider';
 
 const Links = ()=>{
 
-  const {links, getLinks, createLink} = useContext(DataContext)
+  const {links, getLinks, createLink, updateLink} = useContext(DataContext)
   return (
     <div>
     <h1>Links here</h1>
     <div>{JSON.stringify(links)}</div>
-    <button onClick={getLinks}>on Click</button>
-    <button onClick={()=>createLink({title:'title space', username:'michaelp' })}>Create Links</button>
+    <button onClick={getLinks}>Get Links</button>
+    <button onClick={()=>createLink({title:'title', username:'michealp' })}>Create Links</button>
+    <button onClick={()=>updateLink({id:19, title:'updated'})}>Update Link</button>
+    <button onClick={()=>deleteLink(19)}>delete Link</button>
     </div>
   )
 }

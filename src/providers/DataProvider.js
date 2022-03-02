@@ -49,13 +49,13 @@ const DataProvider = (props) => {
     }
   }
 
-const deleteLink = async (id)=>{
+const deleteLink = async (id) =>{
   try{
     let res = await axios.delete(`${baseurl}/api/links/${id}`)
     console.log(res)
     setlinks(links.filter(l =>l.id !== id))
   }catch(err){
-    alert('err occured')
+    alert('err occurred')
   }
 }
   
@@ -65,7 +65,7 @@ const deleteLink = async (id)=>{
     createLink,
     getLinks,
     links,
-    deleteLink,
+    deleteLink
     
 };
   // return the provider which will wrap my all app
